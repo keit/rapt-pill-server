@@ -6,13 +6,16 @@ const nextApp = next({ dev });
 const handle = nextApp.getRequestHandler();
 
 const app = express();
+// Middleware to parse JSON body
+app.use(express.json());
 
 // Prepare Next.js
 nextApp.prepare().then(() => {
   // Define any API routes first
-  app.get("/data", (req, res) => {
+  app.post("/pillData", (req, res) => {
+    console.log(req.body);
     // Handle your API endpoint logic here (e.g., receiving data from Arduino)
-    res.json({ message: "API received data" });
+    res.json({});
   });
 
   // Serve Next.js pages
