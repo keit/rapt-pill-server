@@ -13,6 +13,8 @@ app.use(express.json());
 nextApp.prepare().then(() => {
   // Define any API routes first
   app.post("/pillData", (req, res) => {
+    const currentTime = new Date();
+    console.log(currentTime.toLocaleTimeString());
     console.log(req.body);
     // Handle your API endpoint logic here (e.g., receiving data from Arduino)
     res.json({});
