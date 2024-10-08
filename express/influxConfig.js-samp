@@ -1,0 +1,9 @@
+
+// influxConfig.js
+module.exports = {
+  url: "http://localhost:8086", // Replace with your InfluxDB URL
+  token:
+    "influx db api token", // Replace with your InfluxDB token
+  org: "your org name", // Replace with your organization name
+  bucket: "your bucket name", // Replace with your bucket name
+};

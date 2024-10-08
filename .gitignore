@@ -37,3 +37,4 @@ next-env.d.ts
 
 #influxdb
 influxdb_data
+/express/influxConfig.js
