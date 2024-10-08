@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "express": "node server.js"
+    "express": "node src/server.js"
   },
   "dependencies": {
     "express": "^4.21.0",
