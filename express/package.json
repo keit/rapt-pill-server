@@ -10,6 +10,7 @@
     "express": "node src/server.js"
   },
   "dependencies": {
+    "@influxdata/influxdb-client": "^1.35.0",
     "express": "^4.21.0",
     "next": "14.2.14",
     "react": "^18",
