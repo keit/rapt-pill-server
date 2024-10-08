@@ -28,8 +28,7 @@ nextApp.prepare().then(() => {
       .booleanField("heaterStatus", data.heaterStatus)
       .floatField("heaterThreshold", data.heaterThreshold)
       .floatField("battery", data.battery)
-      .intField("memory", data.memory)
-      .booleanField("refreshNow", data.refreshNow);
+      .intField("memory", data.memory);
     writeApi.writePoint(point);
     // Handle your API endpoint logic here (e.g., receiving data from Arduino)
     res.status(200).json({ message: "success" });
