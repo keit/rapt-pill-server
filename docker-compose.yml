@@ -20,8 +20,8 @@ services:
       - ./express:/app  # Bind your local folder for development
     depends_on:
       - influxdb  # Ensure that InfluxDB starts before Express
-    environment:
-      INFLUXDB_URL: http://influxdb:8086  # InfluxDB URL for your Express app
+    env_file:
+      - ./express/.env  # Use the .env file for environment variables
 
 volumes:
   influxdb_data:  # Define a persistent volume for InfluxDB using a bind mount
