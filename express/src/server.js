@@ -22,9 +22,6 @@ nextApp.prepare().then(() => {
     if (!data) {
       return res.status(400).json({ message: "invalid data" });
     }
-    const currentTime = new Date();
-    console.log(currentTime.toLocaleTimeString());
-    console.log(req.body);
     const point = new Point("controller_data")
       .floatField("currentTemp", data.currentTemp)
       .floatField("currentGravity", data.currentGravity)
