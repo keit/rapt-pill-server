@@ -11,12 +11,6 @@ const app = express();
 // Middleware to parse JSON body
 app.use(express.json());
 
-// InfluxDB client configuration
-// const url = 'http://localhost:8086';  // InfluxDB URL
-// const token = "";  // Replace with your InfluxDB token
-// const org = 'BlackDogLab';               // Replace with your organization name
-// const bucket = 'RaptPill';         // Replace with your InfluxDB bucket name
-
 const influxDB = new InfluxDB({ url, token });
 const writeApi = influxDB.getWriteApi(org, bucket, 'ms');
 
