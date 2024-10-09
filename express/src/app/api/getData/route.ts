@@ -1,7 +1,13 @@
 // /app/api/getData/route.js
 import { InfluxDB } from "@influxdata/influxdb-client";
 
-export async function GET(req) {
+export interface ControllerData {
+  time: string,
+  value: number | string
+  field: string
+}
+
+export async function GET() {
   const url = process.env.INFLUXDB_URL || "http://localhost:8086";
   const token = process.env.INFLUXDB_TOKEN || "your-influxdb-token";
   const org = process.env.INFLUXDB_ORG || "your-org";
@@ -18,7 +24,7 @@ export async function GET(req) {
       |> yield(name: "mean")
   `;
 
-  const data = [];
+  const data: ControllerData[] = [];
 
   return new Promise((resolve, reject) => {
     queryApi.queryRows(fluxQuery, {

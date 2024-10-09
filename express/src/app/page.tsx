@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
 import "chart.js/auto";
+import { ControllerData } from "./api/getData/route";
 
 export default function Home() {
   const [chartData, setChartData] = useState({ datasets: [] });
@@ -10,7 +11,7 @@ export default function Home() {
   useEffect(() => {
     async function fetchData() {
       const response = await fetch("/api/getData");
-      const data = await response.json();
+      const data: ControllerData[] = await response.json();
 
       const userLocale = navigator.language || "en-US"; // Fallback to 'en-US' if locale is not available
 
