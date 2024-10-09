@@ -25,3 +25,10 @@ body {
     text-wrap: balance;
   }
 }
+
+/* globals.css */
+.chart-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}

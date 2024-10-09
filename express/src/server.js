@@ -1,7 +1,6 @@
 const express = require("express");
 const next = require("next");
 const { InfluxDB, Point } = require("@influxdata/influxdb-client");
-const { url, token, org, bucket } = require("./influxConfig");
 
 const dev = process.env.NODE_ENV !== "production";
 const nextApp = next({ dev });
